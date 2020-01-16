@@ -1,0 +1,49 @@
+@keyframes moveInLeft {
+	/* Inicio da animação */
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+
+	80% {
+		transform: translateX(1rem);
+	}
+
+	/* Fim da animação */
+	100% {
+		opacity: 1;
+		transform: translateX(0); /* 0 = Posição inicial */ 
+	}
+}
+
+@keyframes moveInRight {
+	/* Inicio da animação */
+	0% {
+		opacity: 0;
+		transform: translateX(10rem);
+	}
+
+	80% {
+		transform: translateX(-1rem);
+	}
+
+	/* Fim da animação */
+	100% {
+		opacity: 1;
+		transform: translateX(0); /* 0 = Posição inicial */ 
+	}
+}
+
+@keyframes moveInBottom {
+	/* Inicio da animação */
+	0% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+
+	/* Fim da animação */
+	100% {
+		opacity: 1;
+		transform: translateY(0); /* 0 = Posição inicial */ 
+	}
+}

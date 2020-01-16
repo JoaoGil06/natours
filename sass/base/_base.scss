@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	/* font-size: 10px; */
+	font-size: 62.5%; /* 10 (que é o tamanho que queremos) / 16 (tamanho por defeito) = 0.625, ou seja 62.5% são 10px */ 
+	/* Definimos a font-size para 10px porque a medida "rem" é baseada na font-size raíz do projeto (esta),
+	assim conseguimos saber sempre que 1rem = 10px, isto vai-nos ser útil tanto para tamanhos de letra
+	como para margens e paddings, pois mais tarde em termos de responsividade chega alterar a font-size aqui e tudo
+	aumenta ou diminui conforme a necessidade */
+
+	
+	@include respond(tab-land) {
+		font-size: 56.25%; // 1 rem aqui vai ser igual a 9px, 9/16 = 56.25%
+	}
+
+	@include respond(tab-port) { 
+		font-size: 50%; // 1 rem aqui vai ser igual a 8px, 8/16 = 50%
+	}
+	 /* Não existe necessidade de por a do telemovel visto que a font-size é igual ao tablet portrait 
+	@include respond(phone) {
+		font-size: 50%;  // 1 rem aqui vai ser igual a 8px, 8/16 = 50%
+	}
+	*/
+	@include respond(big-desktop) {
+		font-size: 75%; // 1 rem = 12px, 12/16 = 75%
+	}
+}
+
+body {
+	box-sizing: border-box;
+	padding: 3rem;
+
+	@include respond(tab-port) { 
+		padding: 0; //removemos a borda branca a partir dos 900px
+	}
+}
+
+::selection {
+	background-color: $color-primary;
+	color: $color-white;
+}
